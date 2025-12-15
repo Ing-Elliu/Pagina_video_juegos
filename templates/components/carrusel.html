@@ -1,0 +1,20 @@
+<div id="{{ carousel_id }}" class="carousel slide">
+  <div class="carousel-inner">
+    {% for idx, img in images %}
+    <div class="carousel-item {% if idx == 0 %}active{% endif %}">
+      <img src="{{ url_for('static', filename=img) }}" class="d-block w-100" alt="Imagen {{ idx + 1 }}">
+    </div>
+    {% endfor %}
+  </div>
+
+  <button class="carousel-control-prev" type="button"
+          data-bs-target="#{{ carousel_id }}" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button"
+          data-bs-target="#{{ carousel_id }}" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
