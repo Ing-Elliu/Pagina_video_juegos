@@ -4,14 +4,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return redirect(url_for('juego_wutering_waves'))
+    return render_template('index.html') 
 
 @app.route('/juegos/wutering-waves')
 def juego_wutering_waves():
     images=[
-        (0,"image/camelia-4.jpg"),
-        (1,"image/iuno-1.jpg"),
-        (2,"image/jinshi-3.jpg")
+        (0,"image/wutering/camelia-4.jpg"),
+        (1,"image/wutering/iuno-1.jpg"),
+        (2,"image/wutering/jinshi-3.jpg")
 
     ]
     return render_template('wuwa.html',images=images,carousel_id='carrusel_wuwa')
@@ -27,4 +27,4 @@ def juego_genshin_impact():
     return render_template('genshin.html',images=images,carousel_id='carrusel_genshin')
 
 if __name__ == ('__main__'):
-    app.run()
+    app.run(debug=True)
