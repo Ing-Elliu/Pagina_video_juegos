@@ -26,5 +26,15 @@ def juego_genshin_impact():
 
     return render_template('genshin.html',images=images,carousel_id='carrusel_genshin')
 
+@app.route('/juegos/hokai-star-rail')
+def juego_hokai_star_rail():
+    images=[
+        (0,'image/hokai/acheron-1.jpg'),
+        (1,'image/hokai/herta-1.jpg'),
+        (2,'image/hokai/larganoche-1.jpg')
+    ]
+
+    return render_template('hokai.html',images= images,carousel_id='carrusel_hokai')
+
 if __name__ == ('__main__'):
     app.run(debug=True)
